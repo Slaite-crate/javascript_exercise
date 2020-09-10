@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>This is your first js exercise</h1>
+    <input id="theInput" type="text">
+    <p id="theText" hidden>hello</p>
+    <p>
+    <button id="theButton" onclick="click123()">click me</button>
+    </p>
+    <script>
+        function click123() {
+            if (document.getElementById("theButton").innerHTML === "click me") {
+                document.getElementById("theButton").innerHTML = "Change text above click me again!";
+                document.getElementById("theInput").value = "Change me";
+                document.getElementById("theText").hidden = true;
+            } else if (document.getElementById("theButton").innerHTML === "click me again!"){
+                document.getElementById("theButton").innerHTML = "Change text above click me again!";
+                document.getElementById("theInput").value = "Change me";
+                document.getElementById("theText").hidden = true;
+            } else if (document.getElementById("theInput").value !== "Change me"){
+                document.getElementById("theText").innerHTML = "thank you for changing the input to: " + document.getElementById("theInput").value.bold();
+                document.getElementById("theText").hidden = false;
+                document.getElementById("theButton").innerHTML = "click me again!";
+            }
+        }
+    </script>
+</body>
+</html>
