@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <h1>This is your first js exercise</h1>
     <input id="theInput" type="text">
     <p id="theText" hidden>hello</p>
     <p>
-    <button id="theButton" onclick="click123()">click me</button>
+    <button id="theButton">click me</button>
     </p>
     <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                click123();
+            });
+        });
         function click123() {
             if (document.getElementById("theButton").innerHTML === "click me") {
                 document.getElementById("theButton").innerHTML = "Change text above click me again!";
