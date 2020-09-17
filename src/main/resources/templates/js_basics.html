@@ -10,15 +10,31 @@
     <input id="theInput" type="text">
     <p id="theText" hidden>hello</p>
     <p>
-    <button id="theButton">click me</button>
+        <button id="theButton">click me</button>
+        <!--
+        <button id="theButton" onclick="onButtonClick()"></button>
+        -->
     </p>
     <script>
         $(document).ready(function(){
             $("button").click(function(){
-                click123();
+                if($("#theButton").html() === "click me"){
+                    $("#theButton").html("Change text above and click me again!")
+                    $("#theInput").val("Change me")
+                    $("#theText").hide()
+                } else if($("#theButton").html() === "click me again!"){
+                    $("#theButton").html("Change text above and click me again!")
+                    $("#theInput").val("Change me")
+                    $("#theText").hide()
+                } else if($("#theInput").val() !== "Change me"){
+                    $("#theText").html("thank you for changing the input to: " + $("#theInput").val().bold())
+                    $("#theText").show()
+                    $("#theButton").html("click me again!")
+                }
             });
         });
-        function click123() {
+        <!--
+        function onButtonClick() {
             if (document.getElementById("theButton").innerHTML === "click me") {
                 document.getElementById("theButton").innerHTML = "Change text above click me again!";
                 document.getElementById("theInput").value = "Change me";
@@ -33,6 +49,7 @@
                 document.getElementById("theButton").innerHTML = "click me again!";
             }
         }
+        -->
     </script>
 </body>
 </html>
